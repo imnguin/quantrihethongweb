@@ -1,0 +1,125 @@
+.dashboard-container {
+  width: calc(100% - 20px); /* Trừ margin 10px hai bên từ ContentStyle */
+  margin: 0 auto; /* Căn giữa trong Content */
+  box-sizing: border-box;
+}
+
+.dashboard-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2a44;
+  margin-bottom: 12px;
+}
+
+.dashboard-grid {
+  display: flex;
+  gap: 12px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.stats-column {
+  flex: 0 0 360px; /* Cột thống kê cố định 360px */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chart-inventory-column {
+  flex: 1; /* Chiếm toàn bộ chiều rộng còn lại */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.stat-card {
+  max-width: 360px; /* Card nhỏ gọn */
+  max-height: 140px; /* Giới hạn chiều cao */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.chart-card,
+.inventory-card {
+  max-width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 300px; /* Chiều cao cố định cho biểu đồ */
+}
+
+.stat-card-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+}
+
+.stat-card-content .icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.stat-card-content .value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2a44;
+  margin-bottom: 2px;
+}
+
+.positive {
+  color: #1677ff;
+  font-size: 10px;
+}
+
+.negative {
+  color: #ef4444;
+  font-size: 10px;
+}
+
+.inventory-table {
+  max-width: 100%;
+}
+
+.ant-table-content {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    width: 100%; /* Full width trên mobile */
+  }
+  .dashboard-grid {
+    flex-direction: column;
+  }
+  .stats-column {
+    flex: none;
+    max-width: 100%;
+  }
+  .chart-inventory-column {
+    flex: none;
+    max-width: 100%;
+  }
+  .stat-card {
+    max-width: 100%; /* Full width trên mobile */
+  }
+  .chart-card,
+  .inventory-card {
+    max-width: 100%;
+  }
+  .chart-wrapper {
+    height: 250px; /* Chiều cao nhỏ hơn trên mobile */
+  }
+  .inventory-table {
+    overflow-x: auto;
+  }
+  .ant-table-content {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
