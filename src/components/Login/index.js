@@ -74,7 +74,7 @@ const ThemedLogin = ({ isDark, toggleDark }) => {
                 }}
             >
                 <LoginForm
-                    title={<span style={{ color: '#1677FF', fontWeight: 'bold' }}>HỆ THỐNG QUẢN LÝ</span>}
+                    title={<span style={{ color: '#1677FF', fontWeight: 'bold' }}>QUẢN TRỊ DOANH NGHIỆP</span>}
                     subTitle={
                         <div style={{ color: 'red' }}>
                             Vui lòng đăng nhập để sử dụng hệ thống
