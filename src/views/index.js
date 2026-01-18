@@ -134,7 +134,7 @@ const AppMenu = [
     {
         name: 'Invoice',
         icon: OrderedListOutlined,
-        label: 'Hóa đơn',
+        label: 'Phiếu xuất',
         path: '',
         subItem: [
             {

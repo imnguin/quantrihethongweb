@@ -12,25 +12,25 @@ const ThermalBill = (props) => {
     };
 
     // Kích thước chữ cơ bản cho bill (10px)
-    const baseTextSize = "text-[10px]"; 
+    const baseTextSize = "text-[10px]";
     // Kích thước chữ nhỏ hơn cho chi tiết sản phẩm và tên sản phẩm (9px)
-    const smallTextSize = "text-[9px]"; 
+    const smallTextSize = "text-[9px]";
     // Kích thước chữ siêu nhỏ cho chân bill (9px)
     const extraSmallTextSize = "text-[9px]";
 
     return (
         <div style={{ display: 'none' }} id="printbill" className="max-w-xs mx-auto">
             {/* Áp dụng kích thước chữ cơ bản và font-bold cho toàn bộ bill */}
-            <div className={`bill bg-white border border-gray-300 ${baseTextSize} font-bold`}> 
-                
+            <div className={`bill bg-white border border-gray-300 ${baseTextSize} font-bold`}>
+
                 {/* Phần đầu bill */}
-                <div style={{padding: '0.8rem 0.5rem 0.5rem 0.5rem'}}>
-                    <h1 className="text-center text-base">BILL TÍNH TIỀN</h1> 
-                    <p className="text-center">BÁCH HÓA SV</p>
+                <div style={{ padding: '0.8rem 0.5rem 0.5rem 0.5rem' }}>
+                    <h1 className="text-center text-base">BILL TÍNH TIỀN</h1>
+                    <p className="text-center">QUẢN TRỊ DOANH NGHIỆP</p>
                     <p className="text-center">Ngày: {new Date().toLocaleString('vi-VN', { dateStyle: 'short', timeStyle: 'short' })}</p>
                     <p className="text-center">Mã bill: {outputvoucherid}</p>
                     <hr className="my-1" />
-                    
+
                     {/* Bảng danh sách sản phẩm */}
                     <table className="w-full">
                         <thead>
@@ -44,9 +44,9 @@ const ThermalBill = (props) => {
                             {items.map((item, index) => (
                                 <tr key={index} className="pb-1">
                                     {/* *** THAY ĐỔI: Tên sản phẩm nhỏ hơn (9px) *** */}
-                                    <td className={smallTextSize}> 
-                                        <p>{item.productname}</p> 
-                                        <p className={extraSmallTextSize}>x{item.quantity} {item.quantityunitname}</p> 
+                                    <td className={smallTextSize}>
+                                        <p>{item.productname}</p>
+                                        <p className={extraSmallTextSize}>x{item.quantity} {item.quantityunitname}</p>
                                     </td>
                                     {/* Giá và Thành tiền cũng nhỏ hơn (9px) */}
                                     <td className={`text-right ${smallTextSize}`}>{formatCurrency(item.price)}</td>
@@ -55,21 +55,21 @@ const ThermalBill = (props) => {
                             ))}
                         </tbody>
                     </table>
-                    
+
                     <hr className="my-1" />
                     {/* TỔNG TIỀN: Giữ nguyên text-lg để nổi bật */}
-                    <div className="flex justify-between text-lg"> 
+                    <div className="flex justify-between text-lg">
                         <span>Tiền phải trả:</span>
                         <span>{formatCurrency(total)}</span>
                     </div>
                 </div>
-                
+
                 {/* Phần chân bill */}
-                <div className={`text-center ${extraSmallTextSize}`} style={{padding: '0.2rem 0.5rem 0.5rem 0.5rem'}}> 
+                <div className={`text-center ${extraSmallTextSize}`} style={{ padding: '0.2rem 0.5rem 0.5rem 0.5rem' }}>
                     <p className="mt-1">Cảm ơn quý khách!</p>
                     <p>Hẹn gặp lại!</p>
                 </div>
-                
+
             </div>
         </div>
     );

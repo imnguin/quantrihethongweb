@@ -106,8 +106,8 @@ const Report = () => {
 
     // Cấu hình cột cho Table của Ant Design
     const columns = [
-        { title: 'Mã item', dataIndex: 'itemid', key: 'itemid', width: 60, align: 'center', isSearch: true },
-        { title: 'Tên item', dataIndex: 'itemname', key: 'itemname', width: 100, align: 'center', isSearch: true },
+        { title: 'Mã sản phẩm', dataIndex: 'itemid', key: 'itemid', width: 60, align: 'center', isSearch: true },
+        { title: 'Tên sản phẩm', dataIndex: 'itemname', key: 'itemname', width: 100, align: 'center', isSearch: true },
         { title: 'Số lượng tồn', dataIndex: 'quantitystock', key: 'quantitystock', width: 60, align: 'center' },
     ];
 
@@ -213,7 +213,7 @@ const Report = () => {
 
                 <Col xs={24} lg={12}>
                     <Card title="Thống kê theo nhóm">
-                        <GroupedProductTable dataSource={dataGroupedProduct.filter(x => [...GROUPDISPLAY].includes(parseInt(x.productsubgroupid)))}/>
+                        <GroupedProductTable dataSource={dataGroupedProduct.filter(x => [...GROUPDISPLAY].includes(parseInt(x.productsubgroupid)))} />
                     </Card>
                 </Col>
             </Row>

@@ -9,7 +9,7 @@ const Breadcrumb = (props) => {
     useEffect(() => {
         setPagePath(breadcrumb)
         if (!breadcrumb || breadcrumb.length < 2) {
-            document.title = 'Bách hóa SV';
+            document.title = 'Quản trị doanh nghiệp';
         } else {
             document.title = breadcrumb[breadcrumb.length - 1].title;
         }
